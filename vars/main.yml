@@ -1,0 +1,5 @@
+---
+hypervisor_pkg:
+  - libvirt
+  - qemu-kvm
+  - libguestfs-tools

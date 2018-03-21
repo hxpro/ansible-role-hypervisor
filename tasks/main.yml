@@ -1,0 +1,6 @@
+---
+- name: Install hypervisor packages
+  yum: name={{ hypervisor_pkg }} state=present
+
+- name: Enable/start libvirt daemon
+  service: name=libvirtd enabled=yes state=started
