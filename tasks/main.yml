@@ -1,6 +1,17 @@
 ---
+# install nfs-utils fails sometimes, when libnfsidmap is already installed in elder version
+- name: Update libnfsidmap first
+  package:
+    name: libnfsidmap
+    state: latest
+
 - name: Install hypervisor packages
-  yum: name={{ hypervisor_pkg }} state=present
+  package:
+    name: {{ hypervisor_pkg }}
+    state: latest
 
 - name: Enable/start libvirt daemon
-  service: name=libvirtd enabled=yes state=started
+  service:
+    name: libvirtd
+    enabled: yes
+    state: started
