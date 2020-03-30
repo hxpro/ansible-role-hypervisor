@@ -7,7 +7,7 @@
 
 - name: Install hypervisor packages
   package:
-    name: {{ hypervisor_pkg }}
+    name: "{{ hypervisor_pkg }}"
     state: latest
 
 - name: Enable/start libvirt daemon
